@@ -157,6 +157,8 @@ class DigitRecognizerApp:
 
         self.canvas.bind("<B1-Motion>", self.paint)     # binds mouse drawing in image
 
+        self.min_confidence = 30
+
     def paint(self, event):
         x1, y1 = (event.x - 6), (event.y - 6)
         x2, y2 = (event.x + 6), (event.y + 6)
@@ -192,7 +194,10 @@ class DigitRecognizerApp:
 
         probs = probabilities.squeeze().numpy()
         probs_str = " | ".join([f"{i}: {p*100:.1f}%" for i, p in enumerate(probs)])
-        self.label.config(text=f"Prediction: {prediction} ({confidence:.1f}%)\n{probs_str}")
+        if confidence > self.min_confidence:
+            self.label.config(text=f"Prediction: {prediction} ({confidence:.1f}%)\n{probs_str}")
+        else:
+            self.label.config(text=f"Prediction: UNKNOWN INPUT \n{probs_str}")
 
 def draw_interface(model):   # create an instance of DigitRecognizer
     root = tk.Tk()
