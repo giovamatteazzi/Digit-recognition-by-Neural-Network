@@ -1,10 +1,10 @@
 # Digit Recognition with MLP (MNIST)
 
-This project investigates the use of a Multilayer Perceptron (MLP) for handwritten \textbf{digit recognition} on the MNIST dataset, which consists of 60,000 training grayscale images.
+This project investigates the use of a Multilayer Perceptron (MLP) for handwritten **digit recognition** on the MNIST dataset, which consists of 60,000 training grayscale images.
 
 The goal of this work is to systematically compare different hyperparameter configurations and training strategies through quantitative evaluation and visualization. The best-performing models are further assessed using standard performance metrics and integrated into a simple interactive interface.
 
-All experiments are implemented in Python using the PyTorch framework.
+All experiments are implemented in **Python** using the PyTorch framework.
 
 
 ---
@@ -20,7 +20,7 @@ src/
 
 ---
 
-## main.py
+### main.py
 
 This file contains the core implementation of the neural network.
 
@@ -35,7 +35,7 @@ Inside the `test()` function, it is possible to enable different evaluation mode
 
 ---
 
-## tests/
+### tests/
 
 This folder contains the code used to run the different experimental setups, including plotting utilities and evaluation scripts.
 
